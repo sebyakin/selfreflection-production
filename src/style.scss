@@ -1,0 +1,307 @@
+// @font-face {
+//   font-family: "Apoc";
+//   src: url("/assets/Apoc-Regular-Trial.woff2") format("woff2");
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+$t-base: 1.2vw;
+$t-headline: 10rem;
+$t-subhead: 4rem;
+$t-pills: 1.35rem;
+$t-credits: 1rem;
+$t-t-mono: "Inconsolata", monospace;
+
+$max-width: 640px;
+
+$c-white: #fff;
+$c-black: #000;
+
+html {
+  font-size: $t-base;
+  background-color: darkgray;
+  min-height: -webkit-fill-available;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Apoc", "Times New Roman", Times, serif;
+  color: $c-white;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.preloader {
+  background-color: $c-white;
+  color: #000;
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  transition: opacity 0.5s ease;
+
+  p {
+  }
+}
+
+.preloader-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.canvas-wrapper {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.appearing {
+  animation: load 1000ms ease-in;
+  animation-fill-mode: backwards;
+}
+
+.content {
+  width: calc(100vw - 1rem);
+  height: calc(100vh - 1rem);
+  padding: 0.5rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  position: absolute;
+
+  @media all and (max-width: $max-width) {
+    width: calc(100vw - 5rem);
+    height: calc(100% - 5rem);
+    padding: 2.5rem;
+  }
+}
+
+.content-loading {
+  display: none;
+  visibility: hidden;
+}
+
+.headline {
+  animation-delay: calc(1 * 200ms);
+  mix-blend-mode: difference;
+
+  h1 {
+    font-size: $t-headline;
+
+    @media only screen and (max-width: $max-width) {
+      font-size: 16rem;
+      mix-blend-mode: difference;
+    }
+  }
+
+  @media only screen and (max-width: $max-width) {
+    margin-bottom: 2rem;
+  }
+}
+
+.text {
+  animation-delay: calc(2 * 200ms);
+
+  h2 {
+    font-size: $t-subhead;
+    mix-blend-mode: difference;
+
+    @media only screen and (max-width: $max-width) {
+      line-height: 125%;
+      font-size: 5rem;
+      mix-blend-mode: difference;
+    }
+  }
+}
+
+.bits {
+  display: flex;
+  justify-content: start;
+  @media only screen and (max-width: $max-width) {
+    mix-blend-mode: normal !important;
+  }
+}
+
+.bit {
+  transition: all 1.3s ease-in;
+  filter: blur(200px);
+  opacity: 0;
+
+  @media only screen and (max-width: $max-width) {
+  }
+}
+
+.bit-visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.technical {
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  animation-delay: calc(3 * 200ms);
+
+  @media only screen and (max-width: $max-width) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .button {
+    background-color: $c-white;
+    color: black;
+    cursor: pointer;
+    margin-left: 0.5rem;
+
+    @media only screen and (max-width: $max-width) {
+      margin-left: 0rem;
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      background-color: #e3e3e3;
+    }
+  }
+}
+
+.pill {
+  background-color: #88ff86;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: $t-pills;
+  color: black;
+
+  @media only screen and (max-width: $max-width) {
+    padding: 2.9rem;
+    border-radius: 2.3rem;
+    font-size: 4.4rem;
+    line-height: 125%;
+  }
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.qr {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  grid-area: one;
+
+  .circle {
+    border-radius: 0.4vw;
+    width: 6vw;
+    height: 6vw;
+    margin-bottom: 1.5vw;
+    background-color: $c-white;
+    display: grid;
+    place-items: center;
+  }
+
+  .qr-code {
+    width: 100%;
+    height: 100%;
+    // transform: translateY(-1.5vw);
+    img {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: $max-width) {
+    display: none;
+  }
+}
+
+.credits {
+  width: calc(100vw - 1rem);
+  position: fixed;
+  z-index: 1;
+  right: 0.5rem;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  // mix-blend-mode: difference;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "one one one"
+    "two two two";
+
+  a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: $max-width) {
+    padding: 2.5rem;
+    width: calc(100vw - 5rem);
+    mix-blend-mode: normal;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    right: 0;
+    left: 0;
+
+    a {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 3rem;
+    }
+  }
+
+  .ar {
+    text-align: center;
+    // width: 100%;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    // display: none;
+    // visibility: hidden;
+  }
+
+  a {
+    color: $c-white;
+    text-decoration: none;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+}
+
+.blend {
+  mix-blend-mode: difference;
+}
+
+.blink {
+  animation: blink 1s infinite alternate ease-in-out;
+}
+
+@keyframes blink {
+  from {
+    color: $c-black;
+  }
+  to {
+    color: $c-white;
+  }
+}
+
+@keyframes load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: $max-width) {
+  .ar-experience {
+    display: none;
+  }
+}
