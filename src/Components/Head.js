@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 export const Head = (props) => {
   const group = useRef();
   // const [hovered, set] = useState(null)
-  const { nodes, materials } = useGLTF('/mesh2.gltf');
+  const { nodes, materials } = useGLTF('/mesh.gltf');
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>

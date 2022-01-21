@@ -17,21 +17,25 @@ $max-width: 640px;
 $c-white: #fff;
 $c-black: #000;
 
+.canvas {
+  position: absolute;
+  z-index: -1;
+}
+
 html {
   font-size: $t-base;
-  background-color: darkgray;
   min-height: -webkit-fill-available;
   height: 100%;
 }
 
-body {
-  overflow: hidden;
-  font-family: "Apoc", "Times New Roman", Times, serif;
-  color: $c-white;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
+// body {
+//   overflow: hidden;
+//   font-family: "Apoc", "Times New Roman", Times, serif;
+//   color: $c-white;
+//   height: 100%;
+//   padding: 0;
+//   margin: 0;
+// }
 
 .preloader {
   background-color: $c-white;

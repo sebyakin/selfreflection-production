@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Apoc Light";
+  font-style: light;
+  font-weight: normal;
+  src: url("../public/assets/ApocLC-Light.woff2") format("woff");
+}
+
+html {
+  background: #fff;
+}
+
+$base: 1.8vw;
+$headline: 10rem;
+$subhead: 4rem;
+$pills: 1.35rem;
+$credits: 1rem;
+
+$max-width: 750px;
+
+$white: #fff;
+$black: #000;
+$green: #88ff86;
+
+html {
+  overflow: hidden;
+  font-family: "Apoc Light";
+}
+
+canvas {
+  height: 100vh;
+  width: 100vw;
+}
+
+.preloader {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  width: 20vw;
+  margin-left: -7.5vw;
+}
+
+.top {
+  z-index: 1;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  position: fixed;
+  color: $white;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.bottom {
+  z-index: 1;
+  color: $white;
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+}
+
+.predictions {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.controls,
+.credits {
+  position: fixed;
+  bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.credits {
+  width: calc(100% - 2rem);
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $credits;
+  color: $white;
+}
+
+.headline {
+  mix-blend-mode: difference;
+}
+
+h1 {
+  font-size: $headline;
+}
+
+h2 {
+  font-size: $subhead;
+  mix-blend-mode: difference;
+}
+
+.pill {
+  background-color: $green;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: $pills;
+  color: black;
+  width: fit-content;
+}
+
+.blink {
+  animation: blink 1s 6 alternate ease-in-out;
+}
+
+.button {
+  background-color: $white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e3e3e3;
+  }
+}
+
+.instagram {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.circle {
+  border-radius: 0.4vw;
+  width: 6vw;
+  height: 6vw;
+  background-color: $white;
+}
+
+.bit {
+  transition: all 1s ease-in;
+  filter: blur(200px);
+  opacity: 0;
+}
+
+.visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+// media!
+
+@media only screen and (max-width: $max-width) {
+  h1 {
+    font-size: 7rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .credits,
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .instagram {
+    order: -1;
+  }
+
+  .circle {
+    display: none;
+  }
+
+  .ar-experience {
+    background-color: $white;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: $pills;
+    color: $black;
+    width: fit-content;
+    font-family: "Apoc Light";
+  }
+
+  .pill {
+    line-height: 130%;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  h1 {
+    font-size: 20vw;
+  }
+}
+
+// animations
+
+@keyframes blink {
+  from {
+    color: $black;
+  }
+  to {
+    color: $white;
+  }
+}
+
+@keyframes load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
