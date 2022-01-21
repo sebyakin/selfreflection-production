@@ -4,10 +4,8 @@ import * as THREE from 'three'
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Suspense, useState } from "react";
 import { Html, useProgress, Stats } from '@react-three/drei'
-import {proxy, useProxy} from 'valtio'
 import React, { useRef } from 'react'
 import {Head} from './Components/Head'  
-import { animated, useSpring } from '@react-spring/web'
 import Title from "./Components/Title";
 import Text from "./Components/Text";
 import Controls from "./Components/Controls";
@@ -18,7 +16,6 @@ function Loader({setLoader}) {
   const { progress } = useProgress()
   
   if (Math.floor(progress) == 83) {
-
     setLoader(true)
   }
 
@@ -47,7 +44,8 @@ export default function App() {
   return (  
     <>
 
-      <div className='top'> 
+
+      <div className={isLoader ? 'top' : 'hidden'}> 
         <Title />
         { isFooter ?  
           '' : 
@@ -62,15 +60,15 @@ export default function App() {
           ''
       }
       
-      <div className="bottom">
+      <div className={isLoader ? 'bottom' : 'hidden'}>
       { isFooter ? <Credits /> : <>
-        {isLoader && 
           <Controls setFooter={setFooter} /> 
-        }
       </>
       }
       </div>
     
+
+
     <Canvas className="canvas" camera={{ position: [0, 20, 5], rotation: [-90, 0, 0], fov: 35 }}>
       <Suspense fallback={<Loader setLoader={setLoader} />}>
         <Rig>

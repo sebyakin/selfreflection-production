@@ -23,7 +23,7 @@ function Credits() {
           href="https://www.instagram.com/ar/419426756403911/"
           target="_blank"
           rel="noopener noreferrer"
-           >OPEN AR EXPERIENCE</a>
+           >Open AR experience ✦</a>
          </div>
         
         <a
