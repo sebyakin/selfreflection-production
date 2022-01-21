@@ -144,6 +144,10 @@ h2 {
   opacity: 1;
 }
 
+.ar-experience {
+  text-transform: uppercase;
+}
+
 // media!
 
 @media only screen and (max-width: $max-width) {
@@ -175,9 +179,12 @@ h2 {
     width: calc(100% - 1rem);
   }
 
+  .controls {
+    gap: 0.5rem;
+  }
+
   .instagram {
     order: -1;
-    width: 100%;
   }
 
   .circle {

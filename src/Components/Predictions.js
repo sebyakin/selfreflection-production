@@ -40,7 +40,6 @@ function Predictions() {
   
         // появление с первой фразой
         setIsVisble(true)
-        console.log('show')
 
         // через 5 сек прячем
         setTimeout(() => {
