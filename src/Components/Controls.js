@@ -21,7 +21,7 @@ function Controls({setFooter}) {
         <>
         <div className="controls">
           <div className="pill blink">
-              {isReady ? 'Your virtual identity is ready' : 'We analysing your data and social graph using your browser’s cookies to adapt your experience...'}
+              {isReady ? 'Your virtual identity is ready Your virtual identity is ready Your virtual identity is ready' : 'We analysing your data and social graph using your browser’s cookies to adapt your experience...'}
           </div>
 
           {isReady ? 
