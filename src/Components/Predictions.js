@@ -142,7 +142,7 @@ function Predictions() {
       const timer = setTimeout(function() {
         setIsVisble(false);
       }
-      , 6000);
+      , 10000);
     }, []);
     
 
@@ -157,18 +157,18 @@ function Predictions() {
         // через 5 сек прячем
         setTimeout(() => {
             setIsVisble(false)
-        }, 5000)
+        }, 10000)
 
         // новая фраза
         setTimeout(() => {
             setCurrentPrediction(Math.floor(Math.random()*predictions.length))
             setChanged(true)
-        }, 10000)
+        }, 15000)
     }
 
     useInterval(() => {
         changePhrase()
-      }, 10000);
+      }, 15000);
 
 
     function useInterval(callback, delay) {

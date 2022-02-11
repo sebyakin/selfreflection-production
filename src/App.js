@@ -11,6 +11,7 @@ import Text from "./Components/Text";
 import Controls from "./Components/Controls";
 import Predictions from "./Components/Predictions";
 import Credits from "./Components/Credits";
+import Content from "./Components/Content";
 
 function Loader({setLoader}) {
   const { progress } = useProgress()
@@ -37,35 +38,15 @@ function Rig({ children }) {
 }
 
 export default function App() {
-
   const [isFooter, setFooter] = useState(false)
   const [isLoader, setLoader] = useState(false)
+
 
   return (  
     <>
 
-
-      <div className={isLoader ? 'top' : 'hidden'}> 
-        <Title />
-        { isFooter ?  
-          '' : 
-          <Text />
-        }
-      </div>
-      
-      { isFooter ?  
-          <div className="predictions">
-            <Predictions />
-          </div> : 
-          ''
-      }
-      
-      <div className={isLoader ? 'bottom' : 'hidden'}>
-      { isFooter ? <Credits /> : <>
-          <Controls setFooter={setFooter} /> 
-      </>
-      }
-      </div>
+    
+    <Content />
     
 
 
