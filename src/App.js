@@ -20,7 +20,7 @@ function Loader({setLoader}) {
     setLoader(true)
   }
 
-  return <Html className="preloader">Loading is happening just right now... {Math.floor(progress)} %</Html>
+  return <Html className="preloader">{Math.floor(progress)} %</Html>
 }
 
 function Rig({ children }) {
@@ -46,7 +46,7 @@ export default function App() {
     <>
 
     
-    <Content />
+    <Content setLoader={setLoader}  />
     
 
 
