@@ -10,7 +10,7 @@ function Credits() {
            href="https://www.instagram.com/olyabazilevich/"
            target="_blank"
            rel="noopener noreferrer">
-            OLYA BAZILEVICH</a>
+            all_1n_0n3</a>
 
         <div className="instagram">
            <div className="circle">
@@ -23,14 +23,14 @@ function Credits() {
           href="https://www.instagram.com/ar/419426756403911/"
           target="_blank"
           rel="noopener noreferrer"
-           >Open AR experience ✦</a>
+           >Open AR experience</a>
          </div>
         
         <a
            href="https://www.instagram.com/sebyakin"
            target="_blank"
            rel="noopener noreferrer"
-           >LESHA SEBYAKIN</a>
+           >sebiakin</a>
         </div>
         </>
     )

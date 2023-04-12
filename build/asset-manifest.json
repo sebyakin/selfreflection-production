@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.60629002.css",
+    "main.js": "/static/js/main.52e46680.js",
+    "static/media/ApocLC-Light.woff2": "/static/media/ApocLC-Light.ddaf26e6af9a7dc58ecc.woff2",
+    "index.html": "/index.html",
+    "main.60629002.css.map": "/static/css/main.60629002.css.map",
+    "main.52e46680.js.map": "/static/js/main.52e46680.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60629002.css",
+    "static/js/main.52e46680.js"
+  ]
+}

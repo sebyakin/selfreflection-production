@@ -50,7 +50,7 @@ export default function App() {
     
 
 
-    <Canvas className="canvas" camera={{ position: [0, 20, 5], rotation: [-90, 0, 0], fov: 35 }}>
+    <Canvas dpr={[1,2]} className="canvas" camera={{ position: [0, 20, 5], rotation: [-90, 0, 0], fov: 35 }}>
       <Suspense fallback={<Loader setLoader={setLoader} />}>
         <Rig>
           <Head position={[0, -2.25, 0]} scale={[0.0125, 0.0125, 0.0125]} />
